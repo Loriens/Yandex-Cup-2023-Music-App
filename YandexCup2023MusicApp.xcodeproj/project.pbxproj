@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D04DEC92AF67CC400026382 /* InstrumentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04DEC82AF67CC400026382 /* InstrumentItemView.swift */; };
+		8D04DECC2AF686CC00026382 /* SoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04DECB2AF686CC00026382 /* SoundSettingsView.swift */; };
+		8D04DECF2AF68CB900026382 /* FooterControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04DECE2AF68CB900026382 /* FooterControlsView.swift */; };
+		8D04DED12AF6979B00026382 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04DED02AF6979B00026382 /* UIColor+hex.swift */; };
 		8D5E76D12AF176B10030F644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E76D02AF176B10030F644 /* AppDelegate.swift */; };
 		8D5E76D32AF176B10030F644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E76D22AF176B10030F644 /* SceneDelegate.swift */; };
-		8D5E76D52AF176B10030F644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E76D42AF176B10030F644 /* ViewController.swift */; };
 		8D5E76DA2AF176B20030F644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E76D92AF176B20030F644 /* Assets.xcassets */; };
 		8D5E76DD2AF176B20030F644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E76DB2AF176B20030F644 /* LaunchScreen.storyboard */; };
+		8DE5F7352AF4226F00D7AC4D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F7312AF4226F00D7AC4D /* MainViewModel.swift */; };
+		8DE5F7362AF4226F00D7AC4D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F7322AF4226F00D7AC4D /* MainViewController.swift */; };
+		8DE5F7372AF4226F00D7AC4D /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F7332AF4226F00D7AC4D /* MainAssembly.swift */; };
+		8DE5F73C2AF423E500D7AC4D /* InstrumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F73B2AF423E400D7AC4D /* InstrumentsView.swift */; };
+		8DE5F73E2AF4241E00D7AC4D /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F73D2AF4241E00D7AC4D /* Instrument.swift */; };
+		8DE5F7402AF4243B00D7AC4D /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE5F73F2AF4243B00D7AC4D /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D04DEC82AF67CC400026382 /* InstrumentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentItemView.swift; sourceTree = "<group>"; };
+		8D04DECB2AF686CC00026382 /* SoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsView.swift; sourceTree = "<group>"; };
+		8D04DECE2AF68CB900026382 /* FooterControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterControlsView.swift; sourceTree = "<group>"; };
+		8D04DED02AF6979B00026382 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		8D5E76CD2AF176B10030F644 /* YandexCup2023MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexCup2023MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5E76D02AF176B10030F644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D5E76D22AF176B10030F644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D5E76D42AF176B10030F644 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D5E76D92AF176B20030F644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D5E76DC2AF176B20030F644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D5E76DE2AF176B20030F644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DE5F7312AF4226F00D7AC4D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8DE5F7322AF4226F00D7AC4D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8DE5F7332AF4226F00D7AC4D /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		8DE5F73B2AF423E400D7AC4D /* InstrumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsView.swift; sourceTree = "<group>"; };
+		8DE5F73D2AF4241E00D7AC4D /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		8DE5F73F2AF4243B00D7AC4D /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +53,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D04DECA2AF686B900026382 /* SoundSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				8D04DECB2AF686CC00026382 /* SoundSettingsView.swift */,
+			);
+			path = SoundSettingsView;
+			sourceTree = "<group>";
+		};
+		8D04DECD2AF68C9D00026382 /* FooterControlsView */ = {
+			isa = PBXGroup;
+			children = (
+				8D04DECE2AF68CB900026382 /* FooterControlsView.swift */,
+			);
+			path = FooterControlsView;
+			sourceTree = "<group>";
+		};
+		8D04DED32AF697E400026382 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D04DED02AF6979B00026382 /* UIColor+hex.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8D5E76C42AF176B10030F644 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +96,79 @@
 		8D5E76CF2AF176B10030F644 /* YandexCup2023MusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				8D5E76D02AF176B10030F644 /* AppDelegate.swift */,
-				8D5E76D22AF176B10030F644 /* SceneDelegate.swift */,
-				8D5E76D42AF176B10030F644 /* ViewController.swift */,
-				8D5E76D92AF176B20030F644 /* Assets.xcassets */,
-				8D5E76DB2AF176B20030F644 /* LaunchScreen.storyboard */,
-				8D5E76DE2AF176B20030F644 /* Info.plist */,
+				8DE6C6BB2AF418A500CE2E55 /* Application Layer */,
+				8DE6C6BC2AF418AC00CE2E55 /* Data Layer */,
+				8DE6C6BD2AF418B100CE2E55 /* Presentation Layer */,
+				8D04DED32AF697E400026382 /* Utils */,
 			);
 			path = YandexCup2023MusicApp;
+			sourceTree = "<group>";
+		};
+		8DE5F73A2AF4234300D7AC4D /* InstrumentsView */ = {
+			isa = PBXGroup;
+			children = (
+				8D04DEC82AF67CC400026382 /* InstrumentItemView.swift */,
+				8DE5F73B2AF423E400D7AC4D /* InstrumentsView.swift */,
+			);
+			path = InstrumentsView;
+			sourceTree = "<group>";
+		};
+		8DE6C6BB2AF418A500CE2E55 /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				8D5E76DE2AF176B20030F644 /* Info.plist */,
+				8D5E76D02AF176B10030F644 /* AppDelegate.swift */,
+				8D5E76D22AF176B10030F644 /* SceneDelegate.swift */,
+				8D5E76D92AF176B20030F644 /* Assets.xcassets */,
+				8D5E76DB2AF176B20030F644 /* LaunchScreen.storyboard */,
+			);
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		8DE6C6BC2AF418AC00CE2E55 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				8DE5F73D2AF4241E00D7AC4D /* Instrument.swift */,
+				8DE5F73F2AF4243B00D7AC4D /* Sample.swift */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		8DE6C6BD2AF418B100CE2E55 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				8DE6C6BF2AF4194A00CE2E55 /* Components */,
+				8DE6C6BE2AF4194700CE2E55 /* User Stories */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		8DE6C6BE2AF4194700CE2E55 /* User Stories */ = {
+			isa = PBXGroup;
+			children = (
+				8DE6C6C12AF419BF00CE2E55 /* Main */,
+			);
+			path = "User Stories";
+			sourceTree = "<group>";
+		};
+		8DE6C6BF2AF4194A00CE2E55 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8D04DECD2AF68C9D00026382 /* FooterControlsView */,
+				8DE5F73A2AF4234300D7AC4D /* InstrumentsView */,
+				8D04DECA2AF686B900026382 /* SoundSettingsView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8DE6C6C12AF419BF00CE2E55 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8DE5F7312AF4226F00D7AC4D /* MainViewModel.swift */,
+				8DE5F7322AF4226F00D7AC4D /* MainViewController.swift */,
+				8DE5F7332AF4226F00D7AC4D /* MainAssembly.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5E76D52AF176B10030F644 /* ViewController.swift in Sources */,
+				8DE5F7372AF4226F00D7AC4D /* MainAssembly.swift in Sources */,
+				8DE5F7402AF4243B00D7AC4D /* Sample.swift in Sources */,
+				8DE5F73C2AF423E500D7AC4D /* InstrumentsView.swift in Sources */,
 				8D5E76D12AF176B10030F644 /* AppDelegate.swift in Sources */,
 				8D5E76D32AF176B10030F644 /* SceneDelegate.swift in Sources */,
+				8DE5F73E2AF4241E00D7AC4D /* Instrument.swift in Sources */,
+				8D04DEC92AF67CC400026382 /* InstrumentItemView.swift in Sources */,
+				8D04DECC2AF686CC00026382 /* SoundSettingsView.swift in Sources */,
+				8DE5F7352AF4226F00D7AC4D /* MainViewModel.swift in Sources */,
+				8D04DED12AF6979B00026382 /* UIColor+hex.swift in Sources */,
+				8D04DECF2AF68CB900026382 /* FooterControlsView.swift in Sources */,
+				8DE5F7362AF4226F00D7AC4D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +392,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexCup2023MusicApp/Info.plist;
+				INFOPLIST_FILE = "YandexCup2023MusicApp/Application Layer/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,9 +422,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexCup2023MusicApp/Info.plist;
+				INFOPLIST_FILE = "YandexCup2023MusicApp/Application Layer/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
