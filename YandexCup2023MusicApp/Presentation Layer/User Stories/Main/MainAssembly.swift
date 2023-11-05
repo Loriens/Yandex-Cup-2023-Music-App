@@ -14,5 +14,4 @@ enum MainAssembly {
         let viewController = MainViewController(viewModel: viewModel)
         return viewController
     }
-    
 }

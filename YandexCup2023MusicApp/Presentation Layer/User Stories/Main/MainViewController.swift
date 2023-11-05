@@ -22,6 +22,11 @@ final class MainViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    private let layersListView = {
+        let view = LayersListView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     private let footerControlsView = {
         let view = FooterControlsView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +55,6 @@ final class MainViewController: UIViewController {
         setupComponents()
         setupConstraints()
         setupViewModel()
-
-        viewModel.loadData()
     }
     
     // MARK: - Setup functions
@@ -59,7 +62,13 @@ final class MainViewController: UIViewController {
     private func setupComponents() {
         view.addSubview(instrumentsView)
         view.addSubview(soundSettingsView)
+        view.addSubview(layersListView)
         view.addSubview(footerControlsView)
+
+        instrumentsView.delegate = viewModel
+        instrumentsView.setupView(instruments: viewModel.instruments)
+        layersListView.setup(viewModel: viewModel.layersListViewModel)
+        footerControlsView.delegate = viewModel
     }
 
     private func setupConstraints() { 
@@ -74,6 +83,11 @@ final class MainViewController: UIViewController {
             soundSettingsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constant.horizontalInset),
             soundSettingsView.bottomAnchor.constraint(equalTo: footerControlsView.topAnchor, constant: -Constant.verticalInset),
 
+            layersListView.topAnchor.constraint(equalTo: soundSettingsView.topAnchor),
+            layersListView.leadingAnchor.constraint(equalTo: soundSettingsView.leadingAnchor),
+            layersListView.trailingAnchor.constraint(equalTo: soundSettingsView.trailingAnchor),
+            layersListView.bottomAnchor.constraint(equalTo: soundSettingsView.bottomAnchor),
+
             footerControlsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constant.horizontalInset),
             footerControlsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constant.horizontalInset),
             footerControlsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Constant.verticalInset),
@@ -83,12 +97,8 @@ final class MainViewController: UIViewController {
 
     private func setupViewModel() {
         [
-            viewModel.$instruments.sink { [unowned self] instruments in
-                guard !instruments.isEmpty else { return }
-                instrumentsView.setupView(instruments: instruments)
-            },
-            viewModel.$layersIsHidden.sink { [unowned self] isHidden in
-                print("hide layer view")
+            viewModel.$layersListIsHidden.sink { [unowned self] isHidden in
+                layersListView.isHidden = isHidden
             }
         ].forEach { $0.store(in: &cancellables) }
     }

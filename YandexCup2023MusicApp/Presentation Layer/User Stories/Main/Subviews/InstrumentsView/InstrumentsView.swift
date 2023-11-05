@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol InstrumentsViewDelegate: AnyObject {
+    func instrumentDidTouch(instrument: Instrument)
+}
+
 final class InstrumentsView: UIView {
     // MARK: - Subviews
 
@@ -21,6 +25,8 @@ final class InstrumentsView: UIView {
     private var instrumentItemViews: [UIView] = []
 
     // MARK: - Props
+
+    weak var delegate: InstrumentsViewDelegate?
 
     private var instruments: [Instrument] = []
 
@@ -57,7 +63,7 @@ final class InstrumentsView: UIView {
     private func instrumentDidTouch(sender: UITapGestureRecognizer) {
         guard let tag = sender.view?.tag, instruments.indices.contains(tag) else { return }
         let instrument = instruments[tag]
-        print("instrumentButtonDidTouch instrument \(instrument)")
+        delegate?.instrumentDidTouch(instrument: instrument)
     }
 
     // MARK: - Public functions
