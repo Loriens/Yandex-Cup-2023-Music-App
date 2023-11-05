@@ -12,36 +12,46 @@ import Combine
 final class MainViewModel {
     // MARK: - Props
 
-    @Published var instruments: [Instrument] = []
-    @Published var layersIsHidden = false
+    @Published var layersListIsHidden = true
+
+    let instruments = [
+        Instrument(title: "гитара", imageName: "guitar", samples: [Sample(title: "гитара 1")]),
+        Instrument(title: "ударные", imageName: "drums", samples: [Sample(title: "ударные 1")]),
+        Instrument(title: "духовые", imageName: "trumpet", samples: [Sample(title: "духовые 1")])
+    ]
+    let layersListViewModel = LayersListViewModel()
 
     // MARK: - Initialization
+
     init() {}
 
     // MARK: - Public functions
 
-    func loadData() {
-        instruments = [
-            Instrument(title: "гитара", imageName: "guitar", samples: []),
-            Instrument(title: "ударные", imageName: "drums", samples: []),
-            Instrument(title: "духовые", imageName: "trumpet", samples: [])
-        ]
-    }
-
     // MARK: - Private functions
 
+}
+
+// MARK: - InstrumentsViewDelegate
+
+extension MainViewModel: InstrumentsViewDelegate {
+    func instrumentDidTouch(instrument: Instrument) {
+        guard let sample = instrument.samples.first else { return }
+        layersListViewModel.add(sample: sample)
+    }
 }
 
 // MARK: - FooterControlsViewDelegate
 
 extension MainViewModel: FooterControlsViewDelegate {
     func footerControlsLayersDidTouch(isSelected: Bool) {
-        layersIsHidden = isSelected
+        layersListIsHidden = !isSelected
     }
 
     func footerControlsMicrphoneDidTouch() {}
 
     func footerControlsRecordDidTouch() {}
+
+    func footerControlsStopRecordingDidTouch() {}
 
     func footerControlsPlayDidTouch() {}
 

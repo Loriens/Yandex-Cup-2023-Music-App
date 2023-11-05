@@ -11,6 +11,7 @@ protocol FooterControlsViewDelegate: AnyObject {
     func footerControlsLayersDidTouch(isSelected: Bool)
     func footerControlsMicrphoneDidTouch()
     func footerControlsRecordDidTouch()
+    func footerControlsStopRecordingDidTouch()
     func footerControlsPlayDidTouch()
     func footerControlsPauseDidTouch()
 }
@@ -18,12 +19,10 @@ protocol FooterControlsViewDelegate: AnyObject {
 final class FooterControlsView: UIView {
     // MARK: - Subviews
 
-    private let layersButton = {
-        let button = UIButton()
-        button.setTitle("Слои", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.setTitleColor(.black, for: .normal)
-        return button
+    private let layersControl = {
+        let control = FooterControlsLayersControl()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
     }()
     private let recordControlsStackView = {
         let stackView = UIStackView()
@@ -40,11 +39,13 @@ final class FooterControlsView: UIView {
     private let recordButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "record"), for: .normal)
+        button.setImage(UIImage(named: "stop_recording"), for: .selected)
         return button
     }()
     private let playAndPauseButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "play"), for: .normal)
+        button.setImage(UIImage(named: "pause"), for: .selected)
         return button
     }()
 
@@ -73,13 +74,13 @@ final class FooterControlsView: UIView {
     // MARK: - Setup functions
 
     private func setupComponents() {
-        addSubview(layersButton)
+        addSubview(layersControl)
         addSubview(recordControlsStackView)
         setupRightControls()
     }
 
     private func setupRightControls() {
-        ([layersButton] + recordControls).forEach { button in
+        ([layersControl] + recordControls).forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
             button.addTarget(self, action: #selector(buttonDidTouch), for: .touchUpInside)
             button.layer.cornerRadius = Constant.recordControlCornerRadius
@@ -92,10 +93,10 @@ final class FooterControlsView: UIView {
 
     private func setupConstraints() {
         var constraints = [
-            layersButton.topAnchor.constraint(equalTo: topAnchor),
-            layersButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            layersButton.widthAnchor.constraint(equalToConstant: Constant.layerButtonSize.width),
-            layersButton.heightAnchor.constraint(equalToConstant: Constant.layerButtonSize.height),
+            layersControl.topAnchor.constraint(equalTo: topAnchor),
+            layersControl.leadingAnchor.constraint(equalTo: leadingAnchor),
+            layersControl.widthAnchor.constraint(equalToConstant: Constant.layerButtonSize.width),
+            layersControl.heightAnchor.constraint(equalToConstant: Constant.layerButtonSize.height),
 
             recordControlsStackView.topAnchor.constraint(equalTo: topAnchor),
             recordControlsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -116,18 +117,19 @@ final class FooterControlsView: UIView {
     // MARK: - Actions
 
     @objc
-    private func buttonDidTouch(sender: UIButton) {
+    private func buttonDidTouch(sender: UIControl) {
         switch sender {
-        case layersButton:
-            layersButton.isSelected.toggle()
-            layersButton.backgroundColor = layersButton.isSelected ? UIColor(hex: "#A8DB10") : .white
-            delegate?.footerControlsLayersDidTouch(isSelected: layersButton.isSelected)
+        case layersControl:
+            layersControl.isSelected.toggle()
+            delegate?.footerControlsLayersDidTouch(isSelected: layersControl.isSelected)
         case microphoneButton:
             delegate?.footerControlsMicrphoneDidTouch()
         case recordButton:
-            print("buttonDidTouch recordButton")
+            recordButton.isSelected.toggle()
+            recordButton.isSelected ? delegate?.footerControlsRecordDidTouch() : delegate?.footerControlsStopRecordingDidTouch()
         case playAndPauseButton:
-            print("buttonDidTouch playAndPauseButton")
+            playAndPauseButton.isSelected.toggle()
+            playAndPauseButton.isSelected ? delegate?.footerControlsPlayDidTouch() : delegate?.footerControlsPauseDidTouch()
         default:
             break
         }
