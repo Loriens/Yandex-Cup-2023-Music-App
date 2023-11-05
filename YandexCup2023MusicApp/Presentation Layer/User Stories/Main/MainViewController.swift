@@ -55,6 +55,8 @@ final class MainViewController: UIViewController {
         setupComponents()
         setupConstraints()
         setupViewModel()
+
+        viewModel.viewDidLoad()
     }
     
     // MARK: - Setup functions
@@ -97,8 +99,9 @@ final class MainViewController: UIViewController {
 
     private func setupViewModel() {
         [
-            viewModel.$layersListIsHidden.sink { [unowned self] isHidden in
-                layersListView.isHidden = isHidden
+            viewModel.$footerControlsViewModel.sink { [unowned self] viewModel in
+                layersListView.isHidden = !viewModel.layersControlIsSelected
+                footerControlsView.setup(viewModel: viewModel)
             }
         ].forEach { $0.store(in: &cancellables) }
     }

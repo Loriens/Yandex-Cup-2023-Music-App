@@ -92,5 +92,3 @@ final class InstrumentsView: UIView {
         return view
     }
 }
-
-private enum Constant {}

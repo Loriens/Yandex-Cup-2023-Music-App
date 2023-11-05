@@ -27,7 +27,7 @@ final class FooterControlsView: UIView {
     private let recordControlsStackView = {
         let stackView = UIStackView()
         stackView.distribution = .fillEqually
-        stackView.spacing = Constant.recordControlsStackViewSpacig
+        stackView.spacing = Constant.recordControlsStackViewSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -54,8 +54,6 @@ final class FooterControlsView: UIView {
     weak var delegate: FooterControlsViewDelegate?
 
     private lazy var recordControls = [
-        microphoneButton,
-        recordButton,
         playAndPauseButton
     ]
 
@@ -92,6 +90,9 @@ final class FooterControlsView: UIView {
     }
 
     private func setupConstraints() {
+        let recordControlsStackViewWidth = Constant.recordControlSize.width * CGFloat(recordControls.count)
+            + CGFloat(recordControls.count - 1) * Constant.recordControlsStackViewSpacing
+
         var constraints = [
             layersControl.topAnchor.constraint(equalTo: topAnchor),
             layersControl.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -101,7 +102,7 @@ final class FooterControlsView: UIView {
             recordControlsStackView.topAnchor.constraint(equalTo: topAnchor),
             recordControlsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             recordControlsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            recordControlsStackView.widthAnchor.constraint(equalToConstant: Constant.recordControlsStackViewWidth)
+            recordControlsStackView.widthAnchor.constraint(equalToConstant: recordControlsStackViewWidth)
         ]
 
         recordControls.forEach { button in
@@ -120,16 +121,14 @@ final class FooterControlsView: UIView {
     private func buttonDidTouch(sender: UIControl) {
         switch sender {
         case layersControl:
-            layersControl.isSelected.toggle()
-            delegate?.footerControlsLayersDidTouch(isSelected: layersControl.isSelected)
+            delegate?.footerControlsLayersDidTouch(isSelected: !layersControl.isSelected)
         case microphoneButton:
             delegate?.footerControlsMicrphoneDidTouch()
         case recordButton:
             recordButton.isSelected.toggle()
             recordButton.isSelected ? delegate?.footerControlsRecordDidTouch() : delegate?.footerControlsStopRecordingDidTouch()
         case playAndPauseButton:
-            playAndPauseButton.isSelected.toggle()
-            playAndPauseButton.isSelected ? delegate?.footerControlsPlayDidTouch() : delegate?.footerControlsPauseDidTouch()
+            playAndPauseButton.isSelected ? delegate?.footerControlsPauseDidTouch() : delegate?.footerControlsPlayDidTouch()
         default:
             break
         }
@@ -137,14 +136,16 @@ final class FooterControlsView: UIView {
 
     // MARK: - Public functions
 
-    // MARK: - Private functions
+    func setup(viewModel: FooterControlsViewModel) {
+        layersControl.isSelected = viewModel.layersControlIsSelected
+        playAndPauseButton.isSelected = viewModel.playAndPauseIsSelected
+    }
 }
 
 private enum Constant {
     static let layerButtonSize = CGSize(width: 74, height: 34)
 
-    static let recordControlsStackViewSpacig: CGFloat = 5
-    static let recordControlsStackViewWidth: CGFloat = 112
+    static let recordControlsStackViewSpacing: CGFloat = 5
     static let recordControlSize = CGSize(width: 34, height: 34)
     static let recordControlCornerRadius: CGFloat = 4
 }

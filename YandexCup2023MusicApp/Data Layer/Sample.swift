@@ -9,4 +9,6 @@ import Foundation
 
 struct Sample {
     let title: String
+    let fileName: String
+    let fileExtension: String
 }

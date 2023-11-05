@@ -36,7 +36,7 @@ final class LayersListCell: UITableViewCell, Reusable {
     private let controlsStackView = {
         let stackView = UIStackView()
         stackView.distribution = .fill
-        stackView.spacing = Constant.controlsStackViewSpacig
+        stackView.spacing = Constant.controlsStackViewSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -137,11 +137,8 @@ final class LayersListCell: UITableViewCell, Reusable {
         guard let model else { return }
         switch sender {
         case playAndPauseButton:
-            playAndPauseButton.isSelected.toggle()
-            contentBackgroundView.backgroundColor = playAndPauseButton.isSelected ? UIColor(hex: "#A8DB10") : .white
-            playAndPauseButton.isSelected ? delegate?.layersListLayerPlayDidTouch(model: model) : delegate?.layersListLayerPauseDidTouch(model: model)
+            playAndPauseButton.isSelected ? delegate?.layersListLayerPauseDidTouch(model: model) : delegate?.layersListLayerPlayDidTouch(model: model)
         case volumeButton:
-            volumeButton.isSelected.toggle()
             volumeButton.isSelected ? delegate?.layersListLayerMutedVolumeDidTouch(model: model) : delegate?.layersListLayerVolumeDidTouch(model: model)
         case deleteButton:
             delegate?.layersListLayerDeleteDidTouch(model: model)
@@ -155,6 +152,9 @@ final class LayersListCell: UITableViewCell, Reusable {
     func setup(model: LayersListCellModel) {
         self.model = model
         titleLabel.text = model.sample.title
+        contentBackgroundView.backgroundColor = model.isPlaying ? UIColor(hex: "#A8DB10") : .white
+        playAndPauseButton.isSelected = model.isPlaying
+        volumeButton.isSelected = model.isMuted
     }
 
     // MARK: - Private functions
@@ -167,7 +167,7 @@ private enum Constant {
 
     static let titleLabelHorizontalInset: CGFloat = 10
 
-    static let controlsStackViewSpacig: CGFloat = 5
+    static let controlsStackViewSpacing: CGFloat = 5
     static let controlsStackViewHeight: CGFloat = 39
     static let controlsStackViewWidth: CGFloat = 99
 
