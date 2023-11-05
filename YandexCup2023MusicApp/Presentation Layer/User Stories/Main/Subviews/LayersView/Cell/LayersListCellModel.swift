@@ -10,4 +10,6 @@ import Foundation
 struct LayersListCellModel {
     let id: UUID
     let sample: Sample
+    let isPlaying: Bool
+    let isMuted: Bool
 }

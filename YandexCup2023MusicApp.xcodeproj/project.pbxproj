@@ -19,7 +19,12 @@
 		8D066ED52AF7AFD300301EE2 /* LayersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066ED42AF7AFD300301EE2 /* LayersListViewModel.swift */; };
 		8D066ED72AF7C3B800301EE2 /* UITableView+registerCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066ED62AF7C3B800301EE2 /* UITableView+registerCellClass.swift */; };
 		8D066EDA2AF7D3E800301EE2 /* FooterControlsLayersControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066ED92AF7D3E800301EE2 /* FooterControlsLayersControl.swift */; };
-		8D066EDD2AF7DCEF00301EE2 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066EDC2AF7DCEF00301EE2 /* AudioService.swift */; };
+		8D066EDD2AF7DCEF00301EE2 /* AudioSampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066EDC2AF7DCEF00301EE2 /* AudioSampleService.swift */; };
+		8D066EE22AF7DFC000301EE2 /* guitar_sample_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D066EDF2AF7DFC000301EE2 /* guitar_sample_1.wav */; };
+		8D066EE32AF7DFC000301EE2 /* drums_sample_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D066EE02AF7DFC000301EE2 /* drums_sample_1.wav */; };
+		8D066EE42AF7DFC000301EE2 /* trumpet_sample_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D066EE12AF7DFC000301EE2 /* trumpet_sample_1.wav */; };
+		8D066EE72AF7FF3300301EE2 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066EE62AF7FF3300301EE2 /* AudioService.swift */; };
+		8D066EE92AF8027600301EE2 /* FooterControlsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D066EE82AF8027600301EE2 /* FooterControlsViewModel.swift */; };
 		8D5E76D12AF176B10030F644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E76D02AF176B10030F644 /* AppDelegate.swift */; };
 		8D5E76D32AF176B10030F644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E76D22AF176B10030F644 /* SceneDelegate.swift */; };
 		8D5E76DA2AF176B20030F644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D5E76D92AF176B20030F644 /* Assets.xcassets */; };
@@ -45,7 +50,12 @@
 		8D066ED42AF7AFD300301EE2 /* LayersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersListViewModel.swift; sourceTree = "<group>"; };
 		8D066ED62AF7C3B800301EE2 /* UITableView+registerCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+registerCellClass.swift"; sourceTree = "<group>"; };
 		8D066ED92AF7D3E800301EE2 /* FooterControlsLayersControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterControlsLayersControl.swift; sourceTree = "<group>"; };
-		8D066EDC2AF7DCEF00301EE2 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		8D066EDC2AF7DCEF00301EE2 /* AudioSampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSampleService.swift; sourceTree = "<group>"; };
+		8D066EDF2AF7DFC000301EE2 /* guitar_sample_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = guitar_sample_1.wav; sourceTree = "<group>"; };
+		8D066EE02AF7DFC000301EE2 /* drums_sample_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drums_sample_1.wav; sourceTree = "<group>"; };
+		8D066EE12AF7DFC000301EE2 /* trumpet_sample_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trumpet_sample_1.wav; sourceTree = "<group>"; };
+		8D066EE62AF7FF3300301EE2 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		8D066EE82AF8027600301EE2 /* FooterControlsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterControlsViewModel.swift; sourceTree = "<group>"; };
 		8D5E76CD2AF176B10030F644 /* YandexCup2023MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexCup2023MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5E76D02AF176B10030F644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D5E76D22AF176B10030F644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,8 +92,9 @@
 		8D04DECD2AF68C9D00026382 /* FooterControlsView */ = {
 			isa = PBXGroup;
 			children = (
-				8D04DECE2AF68CB900026382 /* FooterControlsView.swift */,
 				8D066ED92AF7D3E800301EE2 /* FooterControlsLayersControl.swift */,
+				8D04DECE2AF68CB900026382 /* FooterControlsView.swift */,
+				8D066EE82AF8027600301EE2 /* FooterControlsViewModel.swift */,
 			);
 			path = FooterControlsView;
 			sourceTree = "<group>";
@@ -102,10 +113,9 @@
 		8D066EC82AF7A44800301EE2 /* LayersView */ = {
 			isa = PBXGroup;
 			children = (
-				8D066ECF2AF7A85B00301EE2 /* LayersListCell.swift */,
-				8D066ED22AF7AE4B00301EE2 /* LayersListCellModel.swift */,
 				8D066EC92AF7A45900301EE2 /* LayersListView.swift */,
 				8D066ED42AF7AFD300301EE2 /* LayersListViewModel.swift */,
+				8D066EE52AF7E06300301EE2 /* Cell */,
 			);
 			path = LayersView;
 			sourceTree = "<group>";
@@ -124,9 +134,29 @@
 		8D066EDB2AF7DCD900301EE2 /* Service Layer */ = {
 			isa = PBXGroup;
 			children = (
-				8D066EDC2AF7DCEF00301EE2 /* AudioService.swift */,
+				8D066EDC2AF7DCEF00301EE2 /* AudioSampleService.swift */,
+				8D066EE62AF7FF3300301EE2 /* AudioService.swift */,
 			);
 			path = "Service Layer";
+			sourceTree = "<group>";
+		};
+		8D066EDE2AF7DF9E00301EE2 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				8D066EE02AF7DFC000301EE2 /* drums_sample_1.wav */,
+				8D066EDF2AF7DFC000301EE2 /* guitar_sample_1.wav */,
+				8D066EE12AF7DFC000301EE2 /* trumpet_sample_1.wav */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		8D066EE52AF7E06300301EE2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D066ECF2AF7A85B00301EE2 /* LayersListCell.swift */,
+				8D066ED22AF7AE4B00301EE2 /* LayersListCellModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8D5E76C42AF176B10030F644 = {
@@ -174,6 +204,7 @@
 				8D5E76D22AF176B10030F644 /* SceneDelegate.swift */,
 				8D5E76D92AF176B20030F644 /* Assets.xcassets */,
 				8D5E76DB2AF176B20030F644 /* LaunchScreen.storyboard */,
+				8D066EDE2AF7DF9E00301EE2 /* Samples */,
 			);
 			path = "Application Layer";
 			sourceTree = "<group>";
@@ -272,8 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D066EE42AF7DFC000301EE2 /* trumpet_sample_1.wav in Resources */,
 				8D5E76DD2AF176B20030F644 /* LaunchScreen.storyboard in Resources */,
 				8D5E76DA2AF176B20030F644 /* Assets.xcassets in Resources */,
+				8D066EE32AF7DFC000301EE2 /* drums_sample_1.wav in Resources */,
+				8D066EE22AF7DFC000301EE2 /* guitar_sample_1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +323,11 @@
 				8D066ECE2AF7A60E00301EE2 /* UITableView+deque.swift in Sources */,
 				8DE5F7402AF4243B00D7AC4D /* Sample.swift in Sources */,
 				8DE5F73C2AF423E500D7AC4D /* InstrumentsView.swift in Sources */,
-				8D066EDD2AF7DCEF00301EE2 /* AudioService.swift in Sources */,
+				8D066EDD2AF7DCEF00301EE2 /* AudioSampleService.swift in Sources */,
+				8D066EE92AF8027600301EE2 /* FooterControlsViewModel.swift in Sources */,
 				8D066ECA2AF7A45900301EE2 /* LayersListView.swift in Sources */,
 				8D5E76D12AF176B10030F644 /* AppDelegate.swift in Sources */,
+				8D066EE72AF7FF3300301EE2 /* AudioService.swift in Sources */,
 				8D066ED52AF7AFD300301EE2 /* LayersListViewModel.swift in Sources */,
 				8D5E76D32AF176B10030F644 /* SceneDelegate.swift in Sources */,
 				8D066ED72AF7C3B800301EE2 /* UITableView+registerCellClass.swift in Sources */,

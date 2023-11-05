@@ -62,12 +62,4 @@ final class SoundSettingsView: UIView {
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-
-    // MARK: - Actions
-
-    // MARK: - Public functions
-
-    // MARK: - Private functions
 }
-
-private enum Constant {}
