@@ -1,6 +1,6 @@
 # Yandex Cup 2023. Music App
 
-![screenshot](https://github.com/Loriens/Yandex-Cup-2023-Music-App/blob/master/screenshot.png?raw=true)
+![screenshot](https://github.com/Loriens/Yandex-Cup-2023-Music-App/blob/main/screenshot.png?raw=true)
 
 ## Реализовано
 * Три вида инструментов. По одному сэмплу на каждый инструмент.
